@@ -51,6 +51,7 @@ a{color:inherit}
 .nav-links button.on{color:#17172A;background:#fff}
 @media(max-width:640px){.nav-brand span,.nav-brand .sep{display:none}}
 @media(max-width:420px){.nav-brand b{display:none}.nav-links button{padding:7px 12px}}
+@media(max-width:360px){.nav-in{gap:8px}.nav-brand img{height:12px}.nav-links button{padding:6px 9px;font-size:12px}}
 .view{display:none}
 .view.on{display:block}
 
@@ -969,7 +970,7 @@ scr.welcome.classList.add('is-active'); syncScreen(); paintDeck(); paintChips();
 if(/[?&]open=proto/.test(location.search)) showView('proto');
 
 /* stale-cache guard: Pages caches HTML for 10 minutes */
-var BUILD='b1';
+var BUILD='b2';
 fetch(location.pathname+'?cb='+Date.now(),{cache:'no-store'}).then(function(r){ return r.text(); }).then(function(h){
   var m=h.match(/var BUILD='([^']+)'/); if(m && m[1]!==BUILD){ var q=new URLSearchParams(location.search); q.set('v',m[1]); location.replace(location.pathname+'?'+q.toString()); }
 }).catch(function(){});
